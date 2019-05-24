@@ -12,7 +12,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.springframework.util.CollectionUtils;
-import tk.mybatis.springboot.annotation.DecryptField;
+import tk.mybatis.springboot.annotation.EncryptField;
 import tk.mybatis.springboot.util.CrypticUtils;
 
 import java.lang.reflect.Field;
@@ -87,7 +87,7 @@ public class DBInterceptor implements Interceptor {
                              * 之后处理所有对象直接按照field名称查找Field从而改之即可
                              * 有可能该类存在多个注解字段，所以需要保存到数组（项目中目前最多是2个）
                              * */
-                            if (fields[i].isAnnotationPresent(DecryptField.class)) {
+                            if (fields[i].isAnnotationPresent(EncryptField.class)) {
                                 isDecryptField = true;
                                 break;
                             }

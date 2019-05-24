@@ -28,7 +28,6 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import tk.mybatis.springboot.annotation.DecryptField;
 import tk.mybatis.springboot.annotation.EncryptField;
 
 @Data
@@ -44,7 +43,6 @@ public class Country extends BaseEntity {
     /**
      * 代码
      */
-    @DecryptField
     @EncryptField
     private String countrycode;
 }
